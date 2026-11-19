@@ -55,10 +55,10 @@ function updateHero() {
   }
   const distance = Math.max(1, hero.offsetHeight - window.innerHeight);
   const progress = Math.min(1, Math.max(0, -hero.getBoundingClientRect().top / distance));
-  // Raise the project title, reveal the following text, then slide the full-size video away.
+  // Reveal the title while the sticky hero leaves with the section, avoiding a blank viewport.
   const rise = Math.min(1, progress / 0.38);
   const reveal = Math.min(1, Math.max(0, (progress - 0.12) / 0.22));
-  const slide = Math.min(1, Math.max(0, (progress - 0.55) / 0.45));
+  const slide = 0;
   document.documentElement.style.setProperty('--reveal', reveal.toFixed(3));
   document.documentElement.style.setProperty('--rise', rise.toFixed(3));
   document.documentElement.style.setProperty('--slide', slide.toFixed(3));
